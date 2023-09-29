@@ -55,6 +55,7 @@ function performSelection(isDown) {
             
         } else {
             console.log('已找到包含"3张"字符串的元素，停止替换。');
+            Gear.setRate(100);
             return; // 停止替换
         }
     }
