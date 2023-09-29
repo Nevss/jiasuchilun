@@ -1,4 +1,25 @@
-document.addEventListener('DOMContentLoaded', function() {
+var button = document.createElement("button");
+button.textContent = "开始操作";
+button.style.position = "fixed";
+button.style.top = "20px"; // 距离顶部的距离
+button.style.right = "20px"; // 距离右侧的距离
+button.style.zIndex = "9999"; // 设置z-index确保按钮位于其他元素上方
+button.style.backgroundColor = "#007bff"; // 按钮背景颜色
+button.style.color = "#fff"; // 按钮文字颜色
+button.style.border = "none"; // 去除按钮边框
+button.style.borderRadius = "5px"; // 设置按钮圆角
+button.style.padding = "10px 20px"; // 按钮内边距
+button.style.cursor = "pointer"; // 设置鼠标样式为手型
+
+// 将按钮添加到页面上
+document.body.appendChild(button);
+
+// 添加按钮点击事件监听器
+button.addEventListener("click", function() {
+    // 在这里执行按钮点击后的操作
+    performSelection(true); // 调用你的函数
+});
+
 
 function containsTwoImagesText(element) {
     return element.textContent.includes('3张');
@@ -57,7 +78,6 @@ function performSelection(isDown) {
             
         } else {
             console.log('已找到包含"3张"字符串的元素，停止替换。');
-            Gear.setRate(100);
             return; // 停止替换
         }
     }
@@ -67,5 +87,4 @@ function performSelection(isDown) {
     }, 5000);
 }
 
-performSelection(true);
-}
+//performSelection(true);
