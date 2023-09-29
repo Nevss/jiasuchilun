@@ -77,6 +77,19 @@ function performSelection(isDown) {
                 selectElement.dispatchEvent(enterEvent);
             
         } else {
+            // 创建蒙版元素
+            var overlay = document.createElement("div");
+            overlay.style.position = "fixed";
+            overlay.style.top = "0";
+            overlay.style.right = "0";
+            overlay.style.width = "50%";
+            overlay.style.height = "100%";
+            overlay.style.backgroundColor = "rgba(255, 0, 0, 0.5)"; // 红色蒙版，带有50%的透明度
+            overlay.style.zIndex = "9999"; // 设置蒙版在最前面
+            
+            // 将蒙版添加到页面上
+            document.body.appendChild(overlay);
+
             console.log('已找到包含"3张"字符串的元素，停止替换。');
             return; // 停止替换
         }
