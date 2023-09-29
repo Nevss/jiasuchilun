@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function() {
+
 function containsTwoImagesText(element) {
     return element.textContent.includes('3张');
 }
@@ -66,3 +68,4 @@ function performSelection(isDown) {
 }
 
 performSelection(true);
+}
